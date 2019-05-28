@@ -1,0 +1,33 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "This is for study gulp project !",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/xxxx"
+  },
+  "author": {
+    "name": "huangcf",
+    "email": "chenwaywong@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-hash-file": "^1.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^3.0.0",
+    "uglify": "^0.1.5"
+  },
+  "dependencies": {
+    "gulp-load-plugins": "^1.5.0",
+    "pump": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}
