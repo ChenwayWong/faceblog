@@ -6,8 +6,10 @@ var gulp            = require('gulp'),
     cleancss        = require('gulp-clean-css'),
     uglify          = require('gulp-uglify'),
     rename          = require('gulp-rename'),
-    browserSync     = require('browser-sync')    // 静态服务器
+    // imagemin        = require('gulp-imagemin')
+    browserSync     = require('browser-sync'),    // 静态服务器
     sequence        = require('run-sequence');
+  ;
 
 var config = {
     src: "web",
@@ -56,7 +58,7 @@ gulp.task('js',function(cb){
     pump([
         gulp.src(config.src + '/**/*.js'),
         uglify(),
-        rename({suffix: '.min'}),
+        // rename({suffix: '.min'}),
         gulp.dest(config.dist)
     ], cb)
   });
@@ -65,10 +67,27 @@ gulp.task('js',function(cb){
     pump([
         gulp.src(config.src + '/**/*.css'),
         cleancss(),
-        rename({suffix: '.min'}),
+        // rename({suffix: '.min'}),
         gulp.dest(config.dist)
     ], cb)
   });
+
+  // gulp.task('minify:image',function(cb){
+  //   pump([
+  //     gulp.src(config.src + "/**/*.{png,jpg,gif,ico,jpeg}"),
+  //     imagemin({
+  //         optimizationLevel: 5,   //类型：Number  默认：3  取值范围：0-7（优化等级）
+  //         progressive: true,      //类型：Boolean 默认：false 无损压缩jpg图片
+  //         interlaced: true,       //类型：Boolean 默认：false 隔行扫描gif进行渲染
+  //         multipass: true,        //类型：Boolean 默认：false 多次优化svg直到完全优化
+  //         svgoPlugins: [{removeViewBox: false}],  //不要移除svg的viewbox属性
+  //         use: [pngquant()]       //使用pngquant深度压缩png图片的imagemin插件
+  //     }),
+  //     // 输出至目标目录
+  //     gulp.dest(config.dist)
+  //   ], cb)
+  // });
+
 
 
   gulp.task('server', function(){
@@ -100,6 +119,7 @@ gulp.task('watch', [], function(cb) {
     gulp.watch(config.src + "/**/*.html", ['minify:html']);
     gulp.watch(config.src + "/**/*.css", ['css']);
     gulp.watch(config.src + "/**/*.js", ['js']);
+    // gulp.watch(config.src + "/img/*", ['minify:image']);
 });
 
 /**

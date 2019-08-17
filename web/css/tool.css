@@ -1,0 +1,30 @@
+
+#my_slogn{
+	text-align:center ;
+
+}
+
+
+#avatar_pic{	
+	height: 300px;
+	width: 200px;
+}
+
+
+#place_pic{	
+	height: 20px;
+	width: 20px;
+	/* margin:0px,20px ; */
+}
+
+.short-about span {
+   margin-left: 10px;
+}
+
+.short-about i {
+	text-align: center;
+	margin-left: 20px;
+ }
+
+
+
